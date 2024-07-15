@@ -31,5 +31,10 @@ function loader() {
     // Et on ajoute une fonction de callback pour lancer la vidéo
     .add(() => {
       document.querySelector('video').play(), '-=0.8';
+    })
+    // Et on ajoute une fonction de callback pour cacher le loader pour les utilisateurs de screen readers
+    .add(() => {
+      document.querySelector('.load-container').computedStyleMap.display =
+        'none';
     });
 }
